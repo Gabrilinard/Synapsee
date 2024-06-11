@@ -19,9 +19,14 @@ const VerConsultas = () => {
   };
 
   const handleDeleteAppointment = (appointmentIndex) => {
-    const updatedAppointments = appointments.filter((_, index) => index !== appointmentIndex);
-    setAppointments(updatedAppointments);
-    localStorage.setItem('appointments', JSON.stringify(updatedAppointments));
+    // Exibir caixa de diálogo de confirmação
+    const isConfirmed = window.confirm('Você tem certeza que deseja deletar esta consulta?');
+    if (isConfirmed) {
+      // Se confirmado, deletar a consulta
+      const updatedAppointments = appointments.filter((_, index) => index !== appointmentIndex);
+      setAppointments(updatedAppointments);
+      localStorage.setItem('appointments', JSON.stringify(updatedAppointments));
+    }
   };
 
   return (
