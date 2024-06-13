@@ -73,15 +73,3 @@ export const ListItem = styled.li`
     align-items: center;
     margin-bottom: 10px;
 `;
-
-export const ProcessingMessage = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  z-index: 1000;
-`;
