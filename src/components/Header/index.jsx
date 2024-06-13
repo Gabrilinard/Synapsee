@@ -12,7 +12,7 @@ export default function Header() {
           <li className="NavItens"><Link to="/Agendamento">Agendamento</Link></li>
           <li className="NavItens"><Link to="/Mapa">Mapa</Link></li>
           <li className="NavItens"><Link to="/VerConsultas">Suas Consultas</Link></li>
-          <li className="NavItens"><Link to="/Usuario"><img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt="" width={"35px"} /></Link></li>
+          <li className="NavItens"><Link to="/Usuario"><img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt=""  width={"35px"} /></Link></li>
         </ul>
       </nav>
     </StyledHeader>
