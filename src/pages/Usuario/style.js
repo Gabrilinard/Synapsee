@@ -27,7 +27,7 @@ export const StyledUsuario = styled("usuario", {
 
         h2: {
             color: "black",
-            fontSize: "24px",
+            fontSize: "29px",
             marginBottom: "20px",
         },
 
@@ -35,6 +35,15 @@ export const StyledUsuario = styled("usuario", {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+
+            "a": {
+                marginTop: "20px",
+                color: "black",
+                textDecoration: "underline",
+                "&:hover": {
+                    color: "#0047ab",
+                }
+            }
         },
 
         img: {

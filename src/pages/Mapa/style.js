@@ -6,5 +6,5 @@ export const StyledMapa = styled("div", {
     justifyContent: "center",
     alignItems: "center"
 
+   
 });
-
