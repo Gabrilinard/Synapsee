@@ -1,4 +1,5 @@
 // Header.js
+import React from 'react';
 import { StyledHeader } from './styles';
 import { Link } from 'react-router-dom';
 

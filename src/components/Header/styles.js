@@ -1,21 +1,25 @@
 import { styled } from '@stitches/react';
 
 export const StyledHeader = styled('header', {
-  background: '#222', // Cor de fundo mais escura
-  padding: '15px 0', // Padding aumentado para dar mais espaço entre o texto e a borda
-  position: 'fixed',
-  top: '0',
-  width: '100%',
-  zIndex: 1000,
   '.NavBar': {
     background: "Black",
     display: 'flex',
-    justifyContent: 'center', // Centraliza os itens horizontalmente
+    justifyContent: 'center', 
+    position: 'fixed',
+    top: '0',
+    width: '100%',
+    height: '8vh',
+    padding: '10px 0',
+    zIndex: 1000,
   },
   '.NavBarItem': {
     listStyle: 'none',
     display: 'flex',
-    gap: '15px', // Adiciona espaço entre os itens
+    justifyContent: 'center',
+    alignItems: 'center', 
+    margin: 0,
+    padding: 0,
+    gap: '15px', 
   },
   '.NavItens': {
     margin: 0,
@@ -23,11 +27,10 @@ export const StyledHeader = styled('header', {
   '.NavItens a': {
     color: 'white',
     textDecoration: 'none',
-    padding: '10px 20px', // Padding maior para uma área de clique mais fácil
-    borderRadius: '5px', // Borda arredondada
-    transition: 'background-color 0.3s',
+    padding: '8px 16px',
   },
   '.NavItens a:hover': {
-    backgroundColor: '#444', // Cor de fundo mais escura ao passar o mouse
+    backgroundColor: '#575757',
+    borderRadius: '4px',
   },
 });

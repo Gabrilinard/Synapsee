@@ -77,7 +77,7 @@ const Home = () => {
                     )}
                 </StyledResultsContainer>
             )}
-        </StyledContainer>
+        </>
     );
 };
 
