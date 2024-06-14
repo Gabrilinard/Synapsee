@@ -3,6 +3,7 @@ import { StyledContainer, StyledSearchForm, StyledResultsContainer, StyledResult
 import Header from "../../components/Header"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from '../../components/Footer';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -73,6 +74,7 @@ const Home = () => {
                     )}
                 </StyledResultsContainer>
             )}
+            <Footer />
         </StyledContainer>
     );
 };

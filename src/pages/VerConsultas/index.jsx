@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container, Title, List, ListItem, DeleteButton } from './style';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const VerConsultas = () => {
   const [appointments, setAppointments] = useState([]);
@@ -42,6 +43,7 @@ const VerConsultas = () => {
         ))}
       </List>
     </Container>
+    
   );
 };
 

@@ -9,6 +9,7 @@ import Agendamento from "./pages/Agendamento"
 import AgendarConsulta from "./pages/AgendarConsulta"
 import VerConsultas from "./pages/VerConsultas"
 import Mapa from "./pages/Mapa"
+import Contato from "./pages/Contato"
 
 const Private = ({Item}) =>{
     const {signed} = useAuth();
@@ -26,6 +27,7 @@ export default function AppRoutes() {
                     <Route exact path="/Usuario" element={<Private Item={Usuario} />} />
                     <Route path="/Login" element={<Login />} />
                     <Route exact path="/Agendamento" element={<Private Item={Agendamento} />} />
+                    <Route exact path="/Contato" element={<Private Item={Contato} />} />
                     <Route exact path="/AgendarConsulta" element={<Private Item={AgendarConsulta} />} />
                     <Route exact path="/VerConsultas" element={<Private Item={VerConsultas} />} />
                     <Route exact path="/Mapa" element={<Private Item={Mapa} />} />
