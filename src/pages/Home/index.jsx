@@ -1,16 +1,9 @@
 import React from 'react';
-import { FaLeaf } from 'react-icons/fa';
+import { StyledContainer, MainContent, IconWrapper, Title, Description, Feed, FeedItem } from './style';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { 
-    StyledContainer, 
-    MainContent, 
-    IconWrapper, 
-    Title, 
-    Description, 
-    Feed, 
-    FeedItem 
-} from './style';
+import ChatWidget from '../../components/ChatWidget';
+import { FaLeaf } from 'react-icons/fa';
 
 const Home = () => {
     return (
@@ -36,6 +29,7 @@ const Home = () => {
                     {/* Adicione mais itens de feed aqui */}
                 </Feed>
             </MainContent>
+            <ChatWidget />
             <Footer />
         </StyledContainer>
     );
