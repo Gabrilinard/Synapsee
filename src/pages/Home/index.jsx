@@ -4,11 +4,14 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ChatWidget from '../../components/ChatWidget';
 import { FaLeaf } from 'react-icons/fa';
+import Hero from '../../components/Hero';
+import NewsFeed from '../../components/NewsFeed';
 
 const Home = () => {
     return (
         <StyledContainer>
             <Header />
+            <Hero />
             <MainContent>
                 <IconWrapper>
                     <FaLeaf />
@@ -17,17 +20,7 @@ const Home = () => {
                 <Description>
                     Explore uma ampla variedade de conteúdos sobre sustentabilidade, ecologia e preservação ambiental.
                 </Description>
-                <Feed>
-                    <FeedItem>
-                        <h2>Título do Artigo 1</h2>
-                        <p>Resumo do conteúdo do artigo 1...</p>
-                    </FeedItem>
-                    <FeedItem>
-                        <h2>Título do Artigo 2</h2>
-                        <p>Resumo do conteúdo do artigo 2...</p>
-                    </FeedItem>
-                    {/* Adicione mais itens de feed aqui */}
-                </Feed>
+                <NewsFeed />
             </MainContent>
             <ChatWidget />
             <Footer />
