@@ -11,6 +11,7 @@ import VerConsultas from "./pages/VerConsultas"
 import Mapa from "./pages/Mapa"
 import Contato from "./pages/Contato"
 import TornarEspecialistaPage from "./pages/TornarEspecialista"
+import DocumentList from "./pages/DocumentList"
 
 const Private = ({Item}) =>{
     const {signed} = useAuth();
@@ -32,6 +33,7 @@ export default function AppRoutes() {
                     <Route exact path="/AgendarConsulta" element={<Private Item={AgendarConsulta} />} />
                     <Route exact path="/Especialista" element={<Private Item={TornarEspecialistaPage} />} />
                     <Route exact path="/VerConsultas" element={<Private Item={VerConsultas} />} />
+                    <Route exact path="/DocumentList" element={<Private Item={DocumentList} />} />
                     <Route exact path="/Mapa" element={<Private Item={Mapa} />} />
                     <Route exact path="/Registro" element={<Registro />} />
                     <Route path="*" element={<Login />} />

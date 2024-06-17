@@ -15,11 +15,12 @@ export default function Header() {
           <li className="NavItens"><Link to="/Agendamento">Agendamento</Link></li>
           <li className="NavItens"><Link to="/Mapa">Mapa</Link></li>
           <li className="NavItens"><Link to="/VerConsultas">Suas Consultas</Link></li>
+          <li className="NavItens"><Link to="/DocumentList">Recursos</Link></li>
           {user && user.especialista && (
             <li className="NavItens">
               <Link to="/EspecialistaDashboard">Especialista Dashboard</Link>
             </li>
-          )} : {
+          )}  {
             !user.especialista && (
               <li className="NavItens">
               <Link to="/Especialista">Torne-se Especialista</Link>

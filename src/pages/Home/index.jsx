@@ -16,7 +16,7 @@ const Home = () => {
                 <IconWrapper>
                     <FaLeaf />
                 </IconWrapper>
-                <Title>Bem-vindo ao Ecoflix! (FEED)</Title>
+                <Title>Bem-vindo ao Ecoflix!</Title>
                 <Description>
                     Explore uma ampla variedade de conteúdos sobre sustentabilidade, ecologia e preservação ambiental.
                 </Description>
