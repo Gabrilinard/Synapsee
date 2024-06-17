@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Container, Title, Label, Select, Input, Button, List, ListItem } from './style';
 
@@ -8,14 +8,18 @@ const Index = () => {
   const { selectedExpert } = state || {};
 
   const [appointments, setAppointments] = useState([]);
-
   const [selectedDate, setSelectedDate] = useState('');
+  const [specialists, setSpecialists] = useState([]);
 
   useEffect(() => {
     const storedAppointments = localStorage.getItem('appointments');
     if (storedAppointments) {
       setAppointments(JSON.parse(storedAppointments));
     }
+
+    const usersStorage = JSON.parse(localStorage.getItem('users_bd')) || [];
+    const filteredSpecialists = usersStorage.filter(user => user.especialista);
+    setSpecialists(filteredSpecialists);
   }, []);
 
   const handleDateChange = (e) => setSelectedDate(e.target.value);
@@ -30,7 +34,7 @@ const Index = () => {
 
       const newAppointment = {
         id: new Date().getTime(), // Gerar um ID único com base no tempo atual
-        specialist: selectedExpert.nome,
+        specialist: selectedExpert.name,
         date: selectedDate
       };
 
@@ -57,14 +61,13 @@ const Index = () => {
 
   return (
     <Container>
-        
       <Title>Agendar Consulta</Title>
 
       <div>
         <Label>
           Especialista:
-          <Select value={selectedExpert?.id.toString()} disabled>
-            <option value={selectedExpert?.id.toString()}>{selectedExpert?.nome}</option>
+          <Select value={selectedExpert?.id ? selectedExpert.id.toString() : ''} disabled>
+            <option value={selectedExpert?.id ? selectedExpert.id.toString() : ''}>{selectedExpert?.name}</option>
           </Select>
         </Label>
       </div>
@@ -80,8 +83,8 @@ const Index = () => {
 
       <Title>Consultas Agendadas</Title>
       <List>
-        {appointments.map((appointment, index) => (
-          <ListItem key={index}>
+        {appointments.map((appointment) => (
+          <ListItem key={appointment.id}>
             {appointment.specialist} - {formatDate(appointment.date)}
           </ListItem>
         ))}

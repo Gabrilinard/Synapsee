@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext({});
 
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const registro = (email, password, name, location) => {
+  const registro = (email, password, name, location, especialista, areaEspecializacao, disponibilidade) => {
     const usersStorage = JSON.parse(localStorage.getItem("users_bd")) || [];
 
     const hasUser = usersStorage?.filter((user) => user.email === email);
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
       return "Já tem uma conta com esse E-mail";
     }
 
-    const newUser = { email, password, name, location };
+    const newUser = { email, password, name, location, especialista, areaEspecializacao, disponibilidade };
 
     usersStorage.push(newUser);
     localStorage.setItem("users_bd", JSON.stringify(usersStorage));
@@ -62,8 +62,8 @@ export const AuthProvider = ({ children }) => {
   const updateUserInfo = (newInfo) => {
     const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
 
-    const updatedUsers = usersStorage.map((user) => 
-      user.email === user.email ? { ...user, ...newInfo } : user
+    const updatedUsers = usersStorage.map((u) =>
+      u.email === user.email ? { ...u, ...newInfo } : u
     );
 
     localStorage.setItem("users_bd", JSON.stringify(updatedUsers));
@@ -77,9 +77,28 @@ export const AuthProvider = ({ children }) => {
     setUser((prevUser) => ({ ...prevUser, ...newInfo }));
   };
 
+  const tornarEspecialista = (email) => {
+    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
+
+    if (!usersStorage) {
+      console.error("Não foi possível encontrar usuários no localStorage");
+      return;
+    }
+
+    const updatedUsers = usersStorage.map((user) =>
+      user.email === email ? { ...user, especialista: true } : user
+    );
+
+    localStorage.setItem("users_bd", JSON.stringify(updatedUsers));
+
+    if (user?.email === email) {
+      setUser((prevUser) => ({ ...prevUser, especialista: true }));
+    }
+  };
+
   return (
     <AuthContext.Provider
-      value={{ user, signed: !!user, login, registro, signout, updateUserInfo }}
+      value={{ user, signed: !!user, login, registro, signout, updateUserInfo, tornarEspecialista }}
     >
       {children}
     </AuthContext.Provider>
