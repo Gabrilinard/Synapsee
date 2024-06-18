@@ -5,6 +5,7 @@ import { StyledUsuario } from "./style";
 import useAuth from "../../hooks/useAuth";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
+import Footer from "../../components/Footer";
 
 export default function Usuario() {
   const { user, signout, updateUserInfo } = useAuth();
@@ -43,61 +44,76 @@ export default function Usuario() {
   return (
     <>
       <Header />
-        <StyledUsuario>
-      <div className="container">
-        <div className="containerProfile">
-          <h2 className="profile">Perfil do Usuário</h2>
+      <StyledUsuario>
+        <div className="container">
+          <div className="containerProfile">
+            <h2 className="profile">Perfil do Usuário</h2>
 
-          <div className="profileItens">
-            <p>
-              <strong>Nome:</strong> {user?.name}
-            </p>
-            
+            <div className="profileItens">
+              <p>
+                <strong>Nome:</strong> {user?.name}
+              </p>
 
-            <p>
-              <strong>Email:</strong> {user?.email}
-            </p>
+              <p>
+                <strong>Email:</strong> {user?.email}
+              </p>
 
-            <p>
-              <strong>Localização:</strong> {user?.location}
-              <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('location')} />
-            </p>
-            {editField === 'location' && (
-              <Input type="text" value={newLocation} onChange={(e) => setNewLocation(e.target.value)} placeholder="Nova localização" />
-            )}
-
-            {user.especialista && (
-              <>
+              <div className="editField">
                 <p>
-                  <strong>Área de Especialização:</strong> {user?.areaEspecializacao}
-                  <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('areaEspecializacao')} />
+                  <strong>Localização:</strong> {editField !== 'location' ? (
+                    <>
+                      {user?.location}
+                      <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('location')} />
+                    </>
+                  ) : (
+                    <Input type="text" value={newLocation} onChange={(e) => setNewLocation(e.target.value)} placeholder="Nova localização" />
+                  )}
                 </p>
-                {editField === 'areaEspecializacao' && (
-                  <Input type="text" value={newEspecialidade} onChange={(e) => setNewEspecialidade(e.target.value)} placeholder="Nova área de especialização" />
-                )}
+              </div>
 
-                <p>
-                  <strong>Disponibilidade:</strong> {user?.disponibilidade}
-                  <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('disponibilidade')} />
-                </p>
-                {editField === 'disponibilidade' && (
-                  <Input type="text" value={newDisponibilidade} onChange={(e) => setNewDisponibilidade(e.target.value)} placeholder="Nova disponibilidade" />
-                )}
-              </>
-            )}
+              {user.especialista && (
+                <>
+                  <div className="editField">
+                    <p>
+                      <strong>Área de Especialização:</strong> {editField !== 'areaEspecializacao' ? (
+                        <>
+                          {user?.areaEspecializacao}
+                          <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('areaEspecializacao')} />
+                        </>
+                      ) : (
+                        <Input type="text" value={newEspecialidade} onChange={(e) => setNewEspecialidade(e.target.value)} placeholder="Nova área de especialização" />
+                      )}
+                    </p>
+                  </div>
 
-            {editField && (
-              <Button Text="Salvar Alterações" onClick={handleUpdate} />
-            )}
+                  <div className="editField">
+                    <p>
+                      <strong>Disponibilidade:</strong> {editField !== 'disponibilidade' ? (
+                        <>
+                          {user?.disponibilidade}
+                          <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('disponibilidade')} />
+                        </>
+                      ) : (
+                        <Input type="text" value={newDisponibilidade} onChange={(e) => setNewDisponibilidade(e.target.value)} placeholder="Nova disponibilidade" />
+                      )}
+                    </p>
+                  </div>
+                </>
+              )}
 
-            {error && <p>{error}</p>}
+              {editField && (
+                <Button Text="Salvar Alterações" onClick={handleUpdate} />
+              )}
 
-            <Button Text="Logout" onClick={() => { signout(); navigate("/"); }} />
-            <Link to='/'>Voltar para Home</Link>
+              {error && <p>{error}</p>}
+
+              <Button className='btn' Text="Sair" onClick={() => { signout(); navigate("/"); }} />
+              
+            </div>
           </div>
         </div>
-      </div>
-    </StyledUsuario>
+      </StyledUsuario>
+      <Footer/>
     </>
   );
 }
