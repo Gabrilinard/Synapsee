@@ -4,6 +4,7 @@ const StyledHero = styled.div`
   background-color: #f4f4f4;
   padding: 100px 0;
   text-align: center;
+  width: '100%';
   display: flex;
   flex-direction: line;
   justify-content: center;

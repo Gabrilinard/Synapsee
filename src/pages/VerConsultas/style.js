@@ -1,40 +1,58 @@
+// style.js
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 300px;
-  margin: 0 auto;
   padding: 20px;
-  font-family: 'Arial, sans-serif';
-  padding-top: 100px;
 `;
 
-export const Title = styled.h2`
-  color: #333;
+export const Title = styled.h1`
   text-align: center;
-  margin-bottom: 30px;
 `;
 
 export const List = styled.ul`
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 `;
 
 export const ListItem = styled.li`
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 `;
 
 export const DeleteButton = styled.button`
-  background-color: #f44336;
+  background-color: red;
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 5px;
+`;
+
+export const ReviewButton = styled.button`
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+`;
+
+export const ReviewForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+`;
+
+export const SubmitButton = styled.button`
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 5px;
 `;

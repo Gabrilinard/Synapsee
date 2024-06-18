@@ -6,6 +6,7 @@ import ChatWidget from '../../components/ChatWidget';
 import { FaLeaf } from 'react-icons/fa';
 import Hero from '../../components/Hero';
 import NewsFeed from '../../components/NewsFeed';
+import EventSection from '../../components/EventSection';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
                     <FaLeaf />
                 </IconWrapper>
                 <Title>Bem-vindo ao Ecoflix!</Title>
+                <EventSection />
                 <Description>
                     Explore uma ampla variedade de conteúdos sobre sustentabilidade, ecologia e preservação ambiental.
                 </Description>
