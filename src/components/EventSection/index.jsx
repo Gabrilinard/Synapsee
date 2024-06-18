@@ -1,10 +1,7 @@
-// EventSection/index.jsx
-
 import React from 'react';
 import styled from 'styled-components';
 import Event from './Event';
 import eventsData from './eventsData'; // Arquivo separado para os dados dos eventos
-
 
 const EventSection = () => {
     return (
@@ -23,6 +20,10 @@ const Container = styled.section`
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
     text-align: center;
 `;
 

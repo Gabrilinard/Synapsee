@@ -36,6 +36,8 @@ const Contato = () => {
             </div>
             
         </StyledContact>
+        <Footer />
+
         </>
 
     );

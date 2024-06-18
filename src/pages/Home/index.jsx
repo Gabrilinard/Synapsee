@@ -3,7 +3,7 @@ import { StyledContainer, MainContent, IconWrapper, Title, Description, Feed, Fe
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ChatWidget from '../../components/ChatWidget';
-import { FaLeaf } from 'react-icons/fa';
+import { FaLeaf, FaWind } from 'react-icons/fa';
 import Hero from '../../components/Hero';
 import NewsFeed from '../../components/NewsFeed';
 import EventSection from '../../components/EventSection';
@@ -26,8 +26,10 @@ const Home = () => {
                     <NewsFeed />
                 </MainContent>
                 <ChatWidget />
+            </StyledContainer>
                 <Footer />
-            </StyledContainer></>
+            
+            </>
     );
 };
 

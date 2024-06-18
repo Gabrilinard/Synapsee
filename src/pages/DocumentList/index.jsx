@@ -2,6 +2,7 @@
 import React from 'react';
 import useStyles from './style'; 
 import Header from '../../components/Header'; 
+import Footer from '../../components/Footer';
 
 const documents = [
   {
@@ -50,6 +51,8 @@ const DocumentList = () => {
         ))}
       </ul>
     </div>
+    <Footer />
+
     </>
   );
 };

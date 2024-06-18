@@ -3,6 +3,7 @@ import { StyledContainer, StyledResultsContainer, StyledResultItem } from "./sty
 import Header from "../../components/Header"
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import Footer from "../../components/Footer";
 
 const Home = () => {
     const [searchCriteria, setSearchCriteria] = useState({
@@ -77,6 +78,8 @@ const Home = () => {
                     </StyledResultsContainer>
                 )}
             </StyledContainer>
+            <Footer />
+
         </>
     );
 };

@@ -1,3 +1,5 @@
+// style.js
+
 import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
@@ -7,7 +9,7 @@ export const StyledFooter = styled.footer`
     align-items: center;
     padding: 1rem;
     background-color: #f8f9fa;
-    bottom: 0;
+    bottom: 0; /* Coloca o footer no rodapé da página */
 
     p {
         margin: 0;

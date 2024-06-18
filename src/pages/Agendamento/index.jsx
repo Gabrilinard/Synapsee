@@ -80,8 +80,8 @@ const Home = () => {
                         )}
                     </StyledResultsContainer>
                 )}
-                <Footer />
             </StyledContainer>
+                <Footer />
         </>
     );
 };

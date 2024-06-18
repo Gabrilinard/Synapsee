@@ -5,15 +5,17 @@ export const StyledUsuario = styled("usuario", {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    
 
     ".container": {
-        width: "100vw",
+        margin: "0px",
+        width: "120vw",
         height: "100vh",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: `url(${"https://img.freepik.com/fotos-premium/uma-foto-bonita-um-fundo-bonito-uma-foto-muito-bonita_1028782-9203.jpg"})`, 
+        backgroundImage: `url(${"https://ecomenergia.com.br/wp-content/uploads/2021/07/imagem-capa-producao-de-energia-eolica-no-brasil.jpg"})`, 
         backgroundSize: "cover",
 
         ".containerProfile": {

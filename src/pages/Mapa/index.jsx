@@ -6,6 +6,7 @@ import L from 'leaflet';
 import Header from '../../components/Header';
 import Button from '../../components/Button'
 import logoReduzida from '../../assets/logoReduzida.png'
+import Footer from '../../components/Footer';
 
 // Corrige o problema com os ícones padrão do Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -151,6 +152,8 @@ const Mapa = () => {
           </Marker>
         ))}
       </MapContainer>
+      <Footer />
+
     </>
   );
 };
