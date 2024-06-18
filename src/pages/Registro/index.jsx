@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Header from "../../components/Header";
 import { StyledRegistro } from "./style";
@@ -18,32 +18,42 @@ export default function Registro() {
     const { registro } = useAuth();
 
     const handleSignup = () => {
-        setError(""); // Limpa qualquer erro anterior ao tentar registrar
+        setError("");
 
-        // Validação dos campos obrigatórios
         if (!email || !emailConfig || !senha || !nome || !localizacao) {
             setError("Preencha todos os campos");
             return;
         }
 
-        // Validação de emails iguais
         if (email !== emailConfig) {
             setError("Os e-mails não são iguais");
             return;
         }
 
-        // Chamada à função de registro
         const res = registro(email, senha, nome, localizacao);
 
         if (res) {
-            setError(res); // Exibe mensagem de erro retornada pela função de registro
+            setError(res); 
             return;
         }
 
-        // Registro bem-sucedido
         alert("Usuário cadastrado com sucesso!");
-        navigate("/"); // Redireciona para a página inicial após o registro
+        navigate("/"); 
     }
+
+    useEffect(() => {
+        const handleKeyPress = (e) => {
+            if (e.key === 'Enter') {
+                handleSignup();
+            }
+        };
+
+        window.addEventListener('keypress', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keypress', handleKeyPress);
+        };
+    }, [nome, localizacao, email, emailConfig, senha]); 
 
     return (
         <StyledRegistro>

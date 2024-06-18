@@ -19,10 +19,10 @@ function Header() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto my-2 my-lg-0" navbarScroll style={{ fontSize: '1.2rem' }}>
             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/DocumentList">Recursos</Nav.Link>
             <Nav.Link href="/Mapa">Mapa</Nav.Link>
             <NavDropdown title="Especialista" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/Agendamento">Buscar Especialista</NavDropdown.Item>
-              <NavDropdown.Item href="/AgendarConsulta">Agendar Consulta</NavDropdown.Item>
               <NavDropdown.Divider />
               {user && !user.especialista && (
                 <NavDropdown.Item href="/Especialista">Torne-se Especialista</NavDropdown.Item>

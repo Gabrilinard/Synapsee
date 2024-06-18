@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import useAuth from "../../hooks/useAuth";
 import Header from "../../components/Header";
+import {
+  Container,
+  Title,
+  Form,
+  InputContainer,
+  Label,
+  Input,
+  Button,
+  Message,
+  HomeLink
+} from './style'; 
 
 const TornarEspecialistaPage = () => {
   const { user, tornarEspecialista } = useAuth();
@@ -26,33 +37,32 @@ const TornarEspecialistaPage = () => {
   return (
     <>
       <Header />
-      <div>
-        <br /><br /><br /><br /><br />
-        <h1>Tornar-se Especialista</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Email:</label>
-            <input
+      <Container>
+        <Title>Tornar-se Especialista</Title>
+        <Form onSubmit={handleSubmit}>
+          <InputContainer>
+            <Label>Email:</Label>
+            <Input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-          </div>
-          <div>
-            <label>Senha:</label>
-            <input
+          </InputContainer>
+          <InputContainer>
+            <Label>Senha:</Label>
+            <Input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
-          <button type="submit">Tornar-se Especialista</button>
-        </form>
-        {message && <p>{message}</p>}
-        <Link to="/">Voltar para Home</Link>
-      </div>
+          </InputContainer>
+          <Button type="submit">Tornar-se Especialista</Button>
+        </Form>
+        {message && <Message error={message === "Email ou senha incorretos." || message === "Você precisa estar logado para se tornar especialista."}>{message}</Message>}
+        <HomeLink to="/">Voltar para Home</HomeLink>
+      </Container>
     </>
   );
 };

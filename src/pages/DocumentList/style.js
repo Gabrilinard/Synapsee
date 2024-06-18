@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
     backgroundColor: '#f0f0f0',
     borderRadius: '8px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    marginTop: '100px', // Ajuste para dar espaço após o Header
+    marginTop: '0px', // Ajuste para dar espaço após o Header
   },
   header: {
     marginBottom: '20px',

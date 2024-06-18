@@ -1,79 +1,99 @@
-import { styled } from "@stitches/react";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const StyledRegistro = styled("registro", {
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+// Container principal que centraliza o conteúdo
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f9fc;
+  padding: 20px;
+`;
 
-    ".container": {
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundImage: `url(${"https://img.freepik.com/fotos-premium/uma-foto-bonita-um-fundo-bonito-uma-foto-muito-bonita_1028782-9203.jpg"})`, 
-        backgroundSize: "cover",
+// Título principal da página
+export const Title = styled.h1`
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+`;
 
-        ".containerRegistro": {
-            borderTop: "10px solid #0047ab",
-            width: "400px",
-            backgroundColor: "#fff",
-            borderRadius: "8px",
-            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-            padding: "20px",
-        },
+// Estilo para o formulário
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
 
-        "required:after" :{
-            content: " *",
-            color: "red"
-        },
+// Container para cada input e seu rótulo
+export const InputContainer = styled.div`
+  width: 100%;
+  margin-bottom: 15px;
+`;
 
-        h2: {
-            color: "black",
-            fontSize: "24px",
-            marginBottom: "20px",
-        },
+// Rótulo para os inputs
+export const Label = styled.label`
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+`;
 
-        ".registroItens": {
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+// Estilo para os inputs
+export const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.2s;
 
-            label: {
-                marginBottom: "8px",
-                fontSize: "16px",
-                fontWeight: "bold",
-            },
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+`;
 
-            input: {
-                padding: "10px",
-                marginBottom: "20px",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-                fontSize: "16px",
+// Estilo para o botão de submissão
+export const Button = styled.button`
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 
-                "&:focus": {
-                    outline: "none",
-                    borderColor: "#007bff",
-                    boxShadow: "0px 0px 5px rgba(0, 123, 255, 0.3)",
-                },
-            },
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
 
-            "input[type='button']": {
-                padding: "10px 20px",
-                backgroundColor: "#0047ab",
-                color: "#fff",
-                border: "none",
-                borderRadius: "4px",
-                fontSize: "16px",
-                cursor: "pointer",
+// Estilo para a mensagem de feedback
+export const Message = styled.p`
+  margin-top: 20px;
+  font-size: 1rem;
+  color: ${props => (props.error ? 'red' : 'green')};
+`;
 
-                "&:hover": {
-                    backgroundColor: "#0056b3",
-                },
-            },
-        },
-    },
-}) 
+// Estilo para o link de navegação para a home
+export const HomeLink = styled(Link)`
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #0056b3;
+  }
+`;
