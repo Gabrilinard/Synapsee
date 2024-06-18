@@ -1,43 +1,52 @@
-import React, { useContext } from 'react';
-import { StyledHeader } from './styles';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import useAuth from "../../hooks/useAuth";
+import logo from "../../assets/logo.png";
 
-export default function Header() {
+function Header() {
   const { user } = useAuth();
 
   return (
-    <StyledHeader>
-      <nav className="NavBar">
-        <ul className="NavBarItem">
-          <li className="NavItens"><Link to="/">Home</Link></li>
-          <li className="NavItens"><Link to="/Contato">Contato</Link></li>
-          <li className="NavItens"><Link to="/Agendamento">Agendamento</Link></li>
-          <li className="NavItens"><Link to="/Mapa">Mapa</Link></li>
-          <li className="NavItens"><Link to="/VerConsultas">Suas Consultas</Link></li>
-          <li className="NavItens"><Link to="/DocumentList">Recursos</Link></li>
-          {user && user.especialista && (
-            <li className="NavItens">
-              <Link to="/EspecialistaDashboard">Especialista Dashboard</Link>
-            </li>
-          )}  {
-            !user.especialista && (
-              <li className="NavItens">
-              <Link to="/Especialista">Torne-se Especialista</Link>
-            </li>
-            )
-          }
-          <li className="NavItens">
-            <Link to="/Usuario">
+    <Navbar expand="lg" className="bg-body-tertiary" style={{ width: '100%' , padding: '10px' }}>
+      <Container fluid>
+        <Navbar.Brand href="#">
+          <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="ms-auto my-2 my-lg-0" navbarScroll style={{ fontSize: '1.2rem' }}>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/Mapa">Mapa</Nav.Link>
+            <NavDropdown title="Especialista" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/Agendamento">Buscar Especialista</NavDropdown.Item>
+              <NavDropdown.Item href="/AgendarConsulta">Agendar Consulta</NavDropdown.Item>
+              <NavDropdown.Divider />
+              {user && !user.especialista && (
+                <NavDropdown.Item href="/Especialista">Torne-se Especialista</NavDropdown.Item>
+              )}
+              {user && user.especialista && (
+                <NavDropdown.Item href="/EspecialistaDashboard">Especialista Dashboard</NavDropdown.Item>
+              )}
+            </NavDropdown>
+            <Nav.Link href="/Contato">Contato</Nav.Link>
+            <Nav.Link href="/VerConsultas">Suas Consultas</Nav.Link>
+          </Nav>
+          <Nav className="d-flex align-items-center">
+            <Nav.Link href="/Usuario">
               <img
-                src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
-                alt=""
-                width={"35px"}
+                src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png"
+                alt="User Icon"
+                style={{ width: '30px', height: 'auto' }}
               />
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </StyledHeader>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
+
+export default Header;

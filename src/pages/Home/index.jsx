@@ -10,23 +10,24 @@ import EventSection from '../../components/EventSection';
 
 const Home = () => {
     return (
-        <StyledContainer>
+        <>
             <Header />
-            <Hero />
-            <MainContent>
-                <IconWrapper>
-                    <FaLeaf />
-                </IconWrapper>
-                <Title>Bem-vindo ao Ecoflix!</Title>
-                <EventSection />
-                <Description>
-                    Explore uma ampla variedade de conteúdos sobre sustentabilidade, ecologia e preservação ambiental.
-                </Description>
-                <NewsFeed />
-            </MainContent>
-            <ChatWidget />
-            <Footer />
-        </StyledContainer>
+            <StyledContainer>
+                <Hero />
+                <MainContent>
+                    <IconWrapper>
+                        <FaLeaf />
+                    </IconWrapper>
+                    <Title>Bem-vindo ao Ecoflix!</Title>
+                    <EventSection />
+                    <Description>
+                        Explore uma ampla variedade de conteúdos sobre sustentabilidade, ecologia e preservação ambiental.
+                    </Description>
+                    <NewsFeed />
+                </MainContent>
+                <ChatWidget />
+                <Footer />
+            </StyledContainer></>
     );
 };
 

@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import Header from '../../components/Header';
+import Button from '../../components/Button'
+import logoReduzida from '../../assets/logoReduzida.png'
 
 // Corrige o problema com os ícones padrão do Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -19,7 +21,7 @@ const defaultIcon = L.icon({
 
 // Ícone para especialistas
 const specialistIcon = L.icon({
-  iconUrl: 'https://cdn-icons-png.flaticon.com/512/4161/4161771.png',
+  iconUrl: logoReduzida,
   iconSize: [40, 40],
   iconAnchor: [20, 40],
 });
@@ -142,7 +144,7 @@ const Mapa = () => {
                 <strong>{especialista.name}</strong> - Especialista<br />
                 {especialista.areaEspecializacao} - Área<br />
                 <Link to={"/agendarconsulta"} state={{ selectedExpert: especialista }}>
-                  <button onClick={() => handleSelectExpert(especialista)}>Agendar Consulta</button>
+                  <Button onClick={() => handleSelectExpert(especialista)} Text={'Agendar Consulta'}/>
                 </Link>
               </div>
             </Popup>

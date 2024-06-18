@@ -11,8 +11,10 @@ const Contato = () => {
     };
 
     return (
+        
+        <>
+        <Header />
         <StyledContact>
-            <Header />
             <div className="content">
                 <h1>Entre em Contato</h1>
                 <p>Envie-nos uma mensagem e entraremos em contato o mais breve possível.</p>
@@ -34,6 +36,8 @@ const Contato = () => {
             </div>
             
         </StyledContact>
+        </>
+
     );
 };
 

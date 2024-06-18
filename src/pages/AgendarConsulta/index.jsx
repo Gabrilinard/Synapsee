@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Container, Title, Label, Select, Input, Button, List, ListItem } from './style';
+import Header from '../../components/Header';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -60,7 +61,9 @@ const Index = () => {
   };
 
   return (
-    <Container>
+  <>
+  <Header/>
+  <Container>
       <Title>Agendar Consulta</Title>
 
       <div>
@@ -90,6 +93,9 @@ const Index = () => {
         ))}
       </List>
     </Container>
+  </>
+
+
   );
 };
 

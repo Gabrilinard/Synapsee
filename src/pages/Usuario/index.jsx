@@ -41,8 +41,9 @@ export default function Usuario() {
   };
 
   return (
-    <StyledUsuario>
+    <>
       <Header />
+        <StyledUsuario>
       <div className="container">
         <div className="containerProfile">
           <h2 className="profile">Perfil do Usuário</h2>
@@ -97,5 +98,6 @@ export default function Usuario() {
         </div>
       </div>
     </StyledUsuario>
+    </>
   );
 }

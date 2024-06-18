@@ -34,8 +34,9 @@ const DocumentList = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
+    <>
       <Header />
+    <div className={classes.container}>
       <h2 className={classes.header}>Documentos Úteis e Recursos de Sustentabilidade</h2>
       <ul className={classes.list}>
         {documents.map((doc) => (
@@ -49,6 +50,7 @@ const DocumentList = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 

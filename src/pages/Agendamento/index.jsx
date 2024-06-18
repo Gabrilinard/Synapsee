@@ -18,17 +18,17 @@ const Home = () => {
     // Função para realizar a pesquisa de especialistas
     const searchExperts = (event) => {
         event.preventDefault(); // Evita o comportamento padrão do formulário
-    
+
         const usersStorage = JSON.parse(localStorage.getItem("users_bd")) || [];
-    
+
         // Verifica se todos os campos de pesquisa estão vazios
         const isSearchEmpty =
             (!searchCriteria.localizacao || !searchCriteria.localizacao.trim()) &&
             (!searchCriteria.areaEspecializacao || !searchCriteria.areaEspecializacao.trim()) &&
             (!searchCriteria.disponibilidade || !searchCriteria.disponibilidade.trim());
-    
+
         let results = usersStorage;
-    
+
         // Filtra apenas os especialistas com base nos critérios de pesquisa
         if (!isSearchEmpty) {
             results = usersStorage.filter(user =>
@@ -41,46 +41,48 @@ const Home = () => {
             // Se todos os critérios de pesquisa estiverem vazios, mostrar todos os especialistas
             results = usersStorage.filter(user => user.especialista === true);
         }
-    
+
         setSearchResults(results);
         setShowResults(true); // Mostrar os resultados após a pesquisa
     };
-    
+
     const handleSelectExpert = (expert) => {
         navigate("/agendarconsulta", { state: { selectedExpert: expert } });
     };
-    
+
     return (
-        <StyledContainer>
+        <>
             <Header />
-            <h1>Encontre um Especialista em Sustentabilidade</h1>
-            <StyledSearchForm onSubmit={searchExperts}>
-                <input type="text" placeholder="Localização" value={searchCriteria.localizacao} onChange={(e) => setSearchCriteria({ ...searchCriteria, localizacao: e.target.value })} />
-                <input type="text" placeholder="Área de Especialização" value={searchCriteria.areaEspecializacao} onChange={(e) => setSearchCriteria({ ...searchCriteria, areaEspecializacao: e.target.value })} />
-                <input type="text" placeholder="Disponibilidade" value={searchCriteria.disponibilidade} onChange={(e) => setSearchCriteria({ ...searchCriteria, disponibilidade: e.target.value })} />
-                <StyledButton type="submit">Pesquisar</StyledButton>
-            </StyledSearchForm>
-            {showResults && (
-                <StyledResultsContainer>
-                    {searchResults.length > 0 ? (
-                        searchResults.map((professional, index) => (
-                            <StyledResultItem key={professional.email || index}>
-                                <h2>{professional.name}</h2>
-                                <p>Localização: {professional.location}</p>
-                                <p>Área de Especialização: {professional.areaEspecializacao}</p>
-                                <p>Disponibilidade: {professional.disponibilidade}</p>
-                                <Link to={"/AgendarConsulta"} state={{ selectedExpert: professional }}>
-                                    <StyledButton onClick={() => handleSelectExpert(professional)}>Agendar Consulta</StyledButton>
-                                </Link>
-                            </StyledResultItem>
-                        ))
-                    ) : (
-                        <p>Nenhum especialista encontrado com os critérios de pesquisa.</p>
-                    )}
-                </StyledResultsContainer>
-            )}
-            <Footer />
-        </StyledContainer>
+            <StyledContainer>
+                <h1>Encontre um Especialista em Sustentabilidade</h1>
+                <StyledSearchForm onSubmit={searchExperts}>
+                    <input type="text" placeholder="Localização" value={searchCriteria.localizacao} onChange={(e) => setSearchCriteria({ ...searchCriteria, localizacao: e.target.value })} />
+                    <input type="text" placeholder="Área de Especialização" value={searchCriteria.areaEspecializacao} onChange={(e) => setSearchCriteria({ ...searchCriteria, areaEspecializacao: e.target.value })} />
+                    <input type="text" placeholder="Disponibilidade" value={searchCriteria.disponibilidade} onChange={(e) => setSearchCriteria({ ...searchCriteria, disponibilidade: e.target.value })} />
+                    <StyledButton type="submit">Pesquisar</StyledButton>
+                </StyledSearchForm>
+                {showResults && (
+                    <StyledResultsContainer>
+                        {searchResults.length > 0 ? (
+                            searchResults.map((professional, index) => (
+                                <StyledResultItem key={professional.email || index}>
+                                    <h2>{professional.name}</h2>
+                                    <p>Localização: {professional.location}</p>
+                                    <p>Área de Especialização: {professional.areaEspecializacao}</p>
+                                    <p>Disponibilidade: {professional.disponibilidade}</p>
+                                    <Link to={"/AgendarConsulta"} state={{ selectedExpert: professional }}>
+                                        <StyledButton onClick={() => handleSelectExpert(professional)}>Agendar Consulta</StyledButton>
+                                    </Link>
+                                </StyledResultItem>
+                            ))
+                        ) : (
+                            <p>Nenhum especialista encontrado com os critérios de pesquisa.</p>
+                        )}
+                    </StyledResultsContainer>
+                )}
+                <Footer />
+            </StyledContainer>
+        </>
     );
 };
 
