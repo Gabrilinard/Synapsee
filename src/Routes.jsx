@@ -38,8 +38,8 @@ export default function AppRoutes() {
                     <Route exact path="/Usuario" element={<Private Item={Usuario} />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/Registro" element={<Registro />} />
-                    <Route exact path="/Agendamento" element={<Private Item={Agendamento} />} />
-                    <Route exact path="/Contato" element={<Private Item={Contato} />} />
+                    <Route exact path="/Agendamento" element={<Agendamento/>} /> 
+                    <Route exact path="/Contato" element={<Contato />} />
                     <Route exact path="/AgendarConsulta" element={<Private Item={AgendarConsulta} />} />
                     <Route exact path="/Especialista" element={<Private Item={TornarEspecialistaPage} />} />
                     <Route exact path="/CriarEvento" element={<Private Item={CriarEvento} />} />
@@ -49,7 +49,7 @@ export default function AppRoutes() {
                     <Route exact path="/EventosInscritos" element={<Private Item={EventosInscritos} />} />
                     <Route exact path="/DocumentList" element={<Private Item={DocumentList} />} />
                     <Route exact path="/Agendamento" element={<Private Item={Agendamento} />} />
-                    <Route exact path="/Documentos" element={<Private Item={Documentos} />} />
+                    <Route exact path="/Documentos" element={<Documentos />} />
                     <Route path="*" element={<Login />} />
 
                 </Routes>
