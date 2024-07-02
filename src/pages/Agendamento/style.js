@@ -1,54 +1,96 @@
-import { styled } from '@stitches/react';
+import styled, { css } from 'styled-components';
 
-export const StyledContainer = styled('div', {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: 'calc(100vh - 8vh)', 
-    backgroundColor: '#f0f0f0',
-    padding: '20px',
-});
-  
+export const StyledContainer = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 147px;
+`;
 
-export const StyledSearchForm = styled('form', {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginBottom: '20px',
-    '& > input': {
-    marginBottom: '10px',
-        padding: '10px',
-        width: '300px',
-        borderRadius: '5px',
-        border: '1px solid #ccc',
-    },
-});
+export const StyledTitle = styled.h1`
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+`;
 
-export const StyledResultsContainer = styled('div', {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)', 
-    gap: '20px', 
-    marginBottom: '20px',
-});
+export const StyledSearchForm = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+`;
 
-export const StyledResultItem = styled('div', {
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    width: '300px',
-    textAlign: 'center',
-});
+export const StyledInputContainer = styled.div`
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
-export const StyledButton = styled('button', {
-    padding: '10px 20px',
-    backgroundColor: '#007bff',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s',
-    '&:hover': {
-        backgroundColor: '#0056b3',
-    },
-});
+export const StyledInput = styled.input`
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+`;
+
+export const StyledSelect = styled.select`
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+`;
+
+export const StyledButton = styled.button`
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #28a745; /* Verde inicial */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #218838; /* Verde escuro ao passar o mouse */
+  }
+
+  ${(props) =>
+    props.inscrito &&
+    css`
+      background-color: #dc3545; /* Vermelho quando inscrito */
+      &:hover {
+        background-color: #c82333; /* Vermelho escuro ao passar o mouse */
+      }
+    `}
+`;
+
+export const StyledResultsContainer = styled.div`
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+export const StyledResultItem = styled.div`
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+  max-width: 300px;
+  margin-right: 20px;
+  flex: 1 0 auto;
+`;

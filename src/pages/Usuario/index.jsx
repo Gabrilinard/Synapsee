@@ -41,6 +41,12 @@ export default function Usuario() {
     setError("");
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleUpdate();
+    }
+  };
+
   return (
     <>
       <Header />
@@ -66,7 +72,13 @@ export default function Usuario() {
                       <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('location')} />
                     </>
                   ) : (
-                    <Input type="text" value={newLocation} onChange={(e) => setNewLocation(e.target.value)} placeholder="Nova localização" />
+                    <Input
+                      type="text"
+                      value={newLocation}
+                      onChange={(e) => setNewLocation(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder="Nova localização"
+                    />
                   )}
                 </p>
               </div>
@@ -75,28 +87,24 @@ export default function Usuario() {
                 <>
                   <div className="editField">
                     <p>
-                      <strong>Área de Especialização:</strong> {editField !== 'areaEspecializacao' ? (
+                      <strong>Profissão:</strong> {editField !== 'areaEspecializacao' ? (
                         <>
                           {user?.areaEspecializacao}
                           <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('areaEspecializacao')} />
                         </>
                       ) : (
-                        <Input type="text" value={newEspecialidade} onChange={(e) => setNewEspecialidade(e.target.value)} placeholder="Nova área de especialização" />
+                        <Input
+                          type="text"
+                          value={newEspecialidade}
+                          onChange={(e) => setNewEspecialidade(e.target.value)}
+                          onKeyDown={handleKeyDown}
+                          placeholder="Nova área de especialização"
+                        />
                       )}
                     </p>
                   </div>
 
                   <div className="editField">
-                    <p>
-                      <strong>Disponibilidade:</strong> {editField !== 'disponibilidade' ? (
-                        <>
-                          {user?.disponibilidade}
-                          <img src={"https://cdn-icons-png.flaticon.com/512/4226/4226577.png"} alt="Edit" onClick={() => handleEditClick('disponibilidade')} />
-                        </>
-                      ) : (
-                        <Input type="text" value={newDisponibilidade} onChange={(e) => setNewDisponibilidade(e.target.value)} placeholder="Nova disponibilidade" />
-                      )}
-                    </p>
                   </div>
                 </>
               )}
@@ -108,12 +116,11 @@ export default function Usuario() {
               {error && <p>{error}</p>}
 
               <Button className='btn' Text="Sair" onClick={() => { signout(); navigate("/"); }} />
-              
             </div>
           </div>
         </div>
       </StyledUsuario>
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -5,17 +5,19 @@ export const StyledUsuario = styled("usuario", {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: `url(${"https://veja.abril.com.br/wp-content/uploads/2023/12/GettyImages-1402241735.jpg.jpg?quality=90&strip=info"})`, 
+    backgroundImage: `url("https://static.vecteezy.com/ti/vetor-gratis/p2/21186383-mundo-autismo-consciencia-dia-enigma-padronizar-fundo-modelo-mundo-autismo-dia-colorida-enigma-bandeira-simbolo-do-autismo-autismo-saude-cuidado-medico-plano-fundo-do-abril-02-celebracao-gratis-vetor.jpg")`, 
+    backgroundRepeat: "no-repeat", // Impede a repetição da imagem de fundo
+    backgroundSize: "cover", // Ajusta a imagem para cobrir todo o elemento
+    backgroundPosition: "center", // Foca no centro da imagem
 
     ".container": {
         margin: "0px",
-        width: "120vw",
+        width: "100%", // Ajusta a largura para ocupar toda a largura da tela
         height: "80vh",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        backgroundSize: "cover",
 
         ".containerProfile": {
             borderTop: "10px solid #0056B3",

@@ -21,7 +21,7 @@ export const ChatHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #1a237e;
     color: white;
     cursor: pointer;
 `;
@@ -49,14 +49,14 @@ export const ChatInput = styled.input`
 
 export const ChatButton = styled.button`
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #1f308e;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 
     &:hover {
-        background-color: #45a049;
+        background-color: #1a237e;
     }
 `;
 
@@ -73,10 +73,24 @@ export const MessageContainer = styled.div`
     margin-bottom: 10px;
 `;
 
-export const Message = styled.p`
-    padding: 10px;
-    border-radius: 5px;
-    background-color: ${({ sender }) => (sender === "User" ? "#d1e7dd" : "#f8d7da")};
-    align-self: ${({ sender }) => (sender === "User" ? "flex-end" : "flex-start")};
+export const Message = styled.div`
+    position: relative;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #e0e0e0; /* Cor de fundo um pouco mais escura */
     max-width: 80%;
+    margin: 10px 0;
 `;
+
+export const DeleteButton = styled.button`
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+`;
+

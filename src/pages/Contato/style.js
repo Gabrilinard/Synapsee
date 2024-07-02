@@ -1,101 +1,85 @@
 import styled from 'styled-components';
 
-export const StyledContact = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f9f9f9;
-    min-height: 100vh;
-    padding: 160px;
-    font-family: Arial, sans-serif;
-
+export const StyledExpertRegistration = styled.div`
+    background-color: #f5f5f5;
+    padding: 4rem 2rem;
+    
     .content {
-        width: 100%;
-        max-width: 600px;
-        background: #ffffff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 24px;
-        color: #333333;
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 16px;
-        color: #666666;
-        margin-bottom: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
     }
 `;
 
-export const ContactForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+export const ExpertForm = styled.form`
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 `;
 
 export const FormGroup = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    margin-bottom: 1.5rem;
 `;
 
 export const Label = styled.label`
-    font-size: 14px;
-    color: #555555;
-    margin-bottom: 5px;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 `;
 
 export const Input = styled.input`
     width: 100%;
-    padding: 10px;
-    border: 1px solid #dddddd;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
-
+    
     &:focus {
         outline: none;
-        border-color: #4CAF50;
-        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        border-color: #6c63ff;
     }
 `;
 
 export const Textarea = styled.textarea`
     width: 100%;
-    padding: 10px;
-    border: 1px solid #dddddd;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
     resize: vertical;
-
+    
     &:focus {
         outline: none;
-        border-color: #4CAF50;
-        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        border-color: #6c63ff;
     }
 `;
 
 export const SubmitButton = styled.button`
-    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #6c63ff;
     border: none;
     border-radius: 4px;
-    background-color: #4CAF50;
-    color: #fff;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
-
+    
     &:hover {
-        background-color: #45A049;
-    }
-
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        background-color: #524dd9;
     }
 `;

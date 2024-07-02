@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const registro = (email, password, name, location, especialista, areaEspecializacao, disponibilidade) => {
+  const registro = (email, password, name, location, especialista, areaEspecializacao) => {
     const usersStorage = JSON.parse(localStorage.getItem("users_bd")) || [];
 
     const hasUser = usersStorage?.filter((user) => user.email === email);
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
       return "Já tem uma conta com esse E-mail";
     }
 
-    const newUser = { email, password, name, location, especialista, areaEspecializacao, disponibilidade };
+    const newUser = { email, password, name, location, especialista, areaEspecializacao };
 
     usersStorage.push(newUser);
     localStorage.setItem("users_bd", JSON.stringify(usersStorage));

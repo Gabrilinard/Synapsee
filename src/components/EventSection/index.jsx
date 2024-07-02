@@ -6,7 +6,7 @@ import eventsData from './eventsData'; // Arquivo separado para os dados dos eve
 const EventSection = () => {
     return (
         <Container>
-            <Title>Eventos de Sustentabilidade</Title>
+            <Title>Explore os Últimos Eventos e Notícias sobre Neurodiversidade!</Title>
             <EventList>
                 {eventsData.map((event, index) => (
                     <Event key={index} event={event} />

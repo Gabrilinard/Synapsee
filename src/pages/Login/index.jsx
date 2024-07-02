@@ -4,14 +4,15 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
 import { StyledLogin } from "./style"; // Importando o estilo
 import useAuth from "../../hooks/useAuth";
 import Input from '../../components/Input';
-import logo from '../../assets/logo.png';
-import logoReduzida from '../../assets/logoReduzida.png'
-import loginImagem from '../../assets/login.jpeg';
+import logo from '../../assets/logo2.jpg';
+import logoReduzida from '../../assets/peca.png'
+import loginImagem from '../../assets/ninas.jpg';
 
 export default function Login() {
     const { login } = useAuth();
     const navigate = useNavigate();
 
+    const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
@@ -19,7 +20,6 @@ export default function Login() {
     const [isClicked, setIsClicked] = useState(false);
     const [isImageRotating, setIsImageRotating] = useState(false);
     const [showImage, setShowImage] = useState(false);
-
 
     const handleLogin = () => {
         setError(""); // Limpa qualquer erro anterior ao tentar fazer login
@@ -39,6 +39,7 @@ export default function Login() {
         }
 
         // Login bem-sucedido
+        localStorage.setItem("nome_usuario", nome); // Armazena o nome do usuário no localStorage
         navigate("/");
     }
 
@@ -54,7 +55,7 @@ export default function Login() {
         return () => {
             window.removeEventListener('keypress', handleKeyPress);
         };
-    }, [email, senha]); // Dependências para reavaliar o listener
+    }, [email, senha, nome]); // Dependências para reavaliar o listener
 
     return (
         <StyledLogin>
@@ -68,6 +69,13 @@ export default function Login() {
                         <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
                             <h3 className="fw-normal mb-3 pb-3" style={{ letterSpacing: '1px' }}>Login</h3>
 
+                            {/* Campo de Nome */}
+                            <Input wrapperClass='mb-4 w-100' label='Nome' id='formControlLg' type='text' size="lg"
+                                value={nome} placeholder={"Digite seu nome"}
+                                onChange={(e) => { setNome(e.target.value); setError(""); }}
+                            />
+
+                            {/* Campos de Email e Senha */}
                             <Input wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg"
                                 value={email} placeholder={"Digite seu email"}
                                 onChange={(e) => { setEmail(e.target.value); setError(""); }}
@@ -77,8 +85,10 @@ export default function Login() {
                                 onChange={(e) => { setSenha(e.target.value); setError(""); }}
                             />
 
+                            {/* Exibição de Erro */}
                             {error && <p style={{ color: 'red' }}>{error}</p>}
 
+                            {/* Botão de Login */}
                             <button
                                 className="custom-btn"
                                 onClick={handleLogin}
@@ -92,19 +102,18 @@ export default function Login() {
                                 }}
                                 style={{
                                     padding: "10px 20px",
-                                    backgroundColor: "#0047ab",
-                                    color: "#fff",
-                                    border: "none",
-                                    borderRadius: "4px",
-                                    fontSize: "16px",
-                                    cursor: "pointer",
-                                    marginTop: "5px",
                                     backgroundColor: isHovered ? '#ffc107' : '#343a40',
                                     color: '#fff',
+                                    border: 'none',
+                                    borderRadius: '4px',
+                                    fontSize: '16px',
+                                    cursor: 'pointer',
+                                    marginTop: '5px',
                                     transition: 'background-color 0.3s ease',
-                                    position: 'relative', // Posição relativa para posicionamento absoluto da imagem
+                                    position: 'relative',
                                 }}
                             >
+                                {/* Ícone ao lado do botão */}
                                 {showImage && (
                                     <img
                                         src={logoReduzida}
@@ -122,12 +131,14 @@ export default function Login() {
                                 <span style={{ opacity: showImage ? 0 : 1 }}>Entrar</span>
                             </button>
 
+                            {/* Link para Registro */}
                             <p>
                                 Não possui conta? <Link to='/Registro' className="link-info">Registre-se</Link>
                             </p>
                         </div>
                     </MDBCol>
 
+                    {/* Imagem ao lado direito */}
                     <MDBCol md="6" className='d-none d-md-block px-0'>
                         <img
                             src={loginImagem}

@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
 import useAuth from "../../hooks/useAuth";
 import Input from '../../components/Input';
-import logo from '../../assets/logo.png';
-import loginImagem from '../../assets/registro.jpeg';
-import logoReduzida from '../../assets/logoReduzida.png'
+import logo from '../../assets/logo2.jpg';
+import loginImagem from '../../assets/ninos.jpg';
+import logoReduzida from '../../assets/peca.png'
 
 const StyledLogin = styled.div`
   display: flex;

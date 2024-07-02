@@ -1,14 +1,16 @@
 import React from 'react';
-import { StyledContainer, MainContent, IconWrapper, Title, Description, Feed, FeedItem } from './style';
+import { StyledContainer, MainContent, IconWrapper, Title } from './style';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ChatWidget from '../../components/ChatWidget';
-import { FaLeaf, FaWind } from 'react-icons/fa';
+import { FaPuzzlePiece } from 'react-icons/fa'; // Importe o ícone de quebra-cabeça
 import Hero from '../../components/Hero';
-import NewsFeed from '../../components/NewsFeed';
 import EventSection from '../../components/EventSection';
+import useAuth from "../../hooks/useAuth"; 
 
 const Home = () => {
+    const { user } = useAuth(); 
+
     return (
         <>
             <Header />
@@ -16,20 +18,15 @@ const Home = () => {
                 <Hero />
                 <MainContent>
                     <IconWrapper>
-                        <FaLeaf />
+                        <FaPuzzlePiece /> {/* Utilize o ícone de quebra-cabeça */}
                     </IconWrapper>
-                    <Title>Bem-vindo ao Ecoflix!</Title>
+                    <Title>Bem-vindo ao Synapse!</Title>
                     <EventSection />
-                    <Description>
-                        Explore uma ampla variedade de conteúdos sobre sustentabilidade, ecologia e preservação ambiental.
-                    </Description>
-                    <NewsFeed />
                 </MainContent>
-                <ChatWidget />
+                {user && <ChatWidget userName={user.name} />} {/* Renderize o ChatWidget apenas se o usuário estiver autenticado */}
             </StyledContainer>
-                <Footer />
-            
-            </>
+            <Footer />
+        </>
     );
 };
 

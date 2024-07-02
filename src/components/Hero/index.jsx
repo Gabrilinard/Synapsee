@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, Button } from "react-bootstrap"; // Importando componentes do Bootstrap
+import { Container, Row, Col, Button } from "react-bootstrap"; 
 import StyledHero from "./style.js";
-import ImagemEnergiaRenovavel from "../../assets/especialista.jpg";
-
+import ImagemAutismo from "../../assets/meninaAutista.jpg";
+9
 function Hero() {
   const navigate = useNavigate();
   const [goUp, setGoUp] = useState(false);
@@ -40,36 +40,37 @@ function Hero() {
           <Col md={6} className="d-flex align-items-center">
             <div className="text-section">
               <p className="text-headline">
-                🌱 Conecte-se com Especialistas em Energia Renovável
+                🧩 Explore e Participe de Eventos Inclusivos sobre Autismo
               </p>
               <h2 className="text-title">
-                Encontre seu Especialista em Energia Sustentável
+                Descubra Eventos para a Comunidade Autista
               </h2>
               <p className="text-description">
-                Conecte-se com profissionais em energia renovável e
-                sustentabilidade. Obtenha conselhos especializados, descubra
-                soluções verdes e colabore em projetos sustentáveis.
+                Encontre eventos voltados para inclusão de pessoas autistas.
+                Explore atividades divertidas e educativas, e participe de
+                iniciativas que promovem a conscientização e o apoio à causa
+                autista.
               </p>
               <Button
                 className="text-appointment-btn"
                 variant="primary"
                 onClick={handleBookAppointmentClick}
               >
-                <FontAwesomeIcon icon={faCalendarCheck} /> Agendar Consulta
+                <FontAwesomeIcon icon={faCalendarCheck} /> Procurar Eventos
               </Button>
               <div className="text-stats mt-3">
                 <Row>
                   <Col xs={4}>
                     <p className="mb-0">100k+</p>
-                    <p>Projetos Apoiados</p>
+                    <p>Eventos Disponíveis</p>
                   </Col>
                   <Col xs={4}>
                     <p className="mb-0">200+</p>
-                    <p>Especialistas em Energia Renovável</p>
+                    <p>Locais Diferentes</p>
                   </Col>
                   <Col xs={4}>
                     <p className="mb-0">15+</p>
-                    <p>Anos de Experiência</p>
+                    <p>Anos de Apoio à Comunidade</p>
                   </Col>
                 </Row>
               </div>
@@ -79,7 +80,7 @@ function Hero() {
             <div className="hero-image-section">
               <img
                 className="hero-image1 img-fluid"
-                src={ImagemEnergiaRenovavel}
+                src={ImagemAutismo}
                 alt="Energia Renovável"
               />
             </div>

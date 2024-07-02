@@ -8,10 +8,14 @@ import useAuth from "./hooks/useAuth.jsx";
 import Agendamento from "./pages/Agendamento"
 import AgendarConsulta from "./pages/AgendarConsulta"
 import VerConsultas from "./pages/VerConsultas"
-import Mapa from "./pages/Mapa"
 import Contato from "./pages/Contato"
 import TornarEspecialistaPage from "./pages/TornarEspecialista"
 import DocumentList from "./pages/DocumentList"
+import CriarEvento from "./pages/CriarEvento"
+import Duvidas from "./pages/Duvidas"
+import Inscricao from "./pages/Inscricao"
+import EventosInscritos from "./pages/EventosInscritos"
+import Documentos from "./pages/Documentos"
 
 const Private = ({Item}) =>{
     const {signed} = useAuth();
@@ -32,10 +36,14 @@ export default function AppRoutes() {
                     <Route exact path="/Contato" element={<Private Item={Contato} />} />
                     <Route exact path="/AgendarConsulta" element={<Private Item={AgendarConsulta} />} />
                     <Route exact path="/Especialista" element={<Private Item={TornarEspecialistaPage} />} />
+                    <Route exact path="/CriarEvento" element={<Private Item={CriarEvento} />} />
+                    <Route exact path="/Duvidas" element={<Private Item={Duvidas} />} />
                     <Route exact path="/VerConsultas" element={<Private Item={VerConsultas} />} />
+                    <Route exact path="/Inscricao" element={<Private Item={Inscricao} />} />
+                    <Route exact path="/EventosInscritos" element={<Private Item={EventosInscritos} />} />
                     <Route exact path="/DocumentList" element={<Private Item={DocumentList} />} />
-                    <Route exact path="/Mapa" element={<Private Item={Mapa} />} />
-                    <Route exact path="/Registro" element={<Registro />} />
+                    <Route exact path="/Agendamento" element={<Private Item={Agendamento} />} />
+                    <Route exact path="/Documentos" element={<Private Item={Documentos} />} />
                     <Route path="*" element={<Login />} />
 
                 </Routes>

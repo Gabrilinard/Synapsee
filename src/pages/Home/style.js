@@ -25,7 +25,7 @@ export const IconWrapper = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 48px;
-    color: #4CAF50;
+    color: #1e90ff; /* Azul simbólico para autismo */
     margin-bottom: 20px;
 `;
 
@@ -34,13 +34,6 @@ export const Title = styled.h1`
     color: #333333;
     text-align: center;
     margin-bottom: 10px;
-`;
-
-export const Description = styled.p`
-    font-size: 16px;
-    color: #666666;
-    text-align: center;
-    margin-bottom: 20px;
 `;
 
 export const Feed = styled.div`

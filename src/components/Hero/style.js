@@ -80,12 +80,12 @@ const StyledHero = styled.div`
   }
 
   .hero-image-section {
-    margin-top: 40px;
+    margin-top: 10px;
 
     .hero-image {
       width: 100%;
       max-width: 8px;
-      border-radius: 10px;
+      border-radius: 30px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
   }
