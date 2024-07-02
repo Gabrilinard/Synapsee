@@ -32,6 +32,7 @@ export default function AppRoutes() {
                     <Route exact path="/" element={<Private Item={Home} />} />
                     <Route exact path="/Usuario" element={<Private Item={Usuario} />} />
                     <Route path="/Login" element={<Login />} />
+                    <Route path="/Registro" element={<Registro />} />
                     <Route exact path="/Agendamento" element={<Private Item={Agendamento} />} />
                     <Route exact path="/Contato" element={<Private Item={Contato} />} />
                     <Route exact path="/AgendarConsulta" element={<Private Item={AgendarConsulta} />} />
