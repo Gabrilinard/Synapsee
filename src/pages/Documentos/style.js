@@ -50,3 +50,47 @@ export const DocumentDescription = styled.p`
   margin-top: 10px;
   line-height: 1.6;
 `;
+
+export const DrawingList = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+`;
+
+export const DrawingItem = styled.li`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
+
+export const DrawingImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+`;
+
+export const DrawingTitle = styled.h3`
+  color: #007acc;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+`;
+
+export const DrawingDownload = styled.a`
+  display: inline-block;
+  background-color: #007acc;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #005a8c;
+  }
+`;

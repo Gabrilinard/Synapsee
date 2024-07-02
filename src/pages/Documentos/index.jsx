@@ -1,13 +1,27 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import casades from "../../assets/casades.jpg"
+import alfabeto from "../../assets/alfabetodes.jpg"
+import dino from "../../assets/dinodes.jpg"
+import divertidaIdes from "../../assets/divertidaIdes.jpg"
+import divertida from "../../assets/divertidades.jpg"
+import dog from "../../assets/dogdes.jpg"
+import maca from "../../assets/macades.jpg"
+import princesa from "../../assets/princesades.jpg"
+import tartaruga from "../../assets/tartarugades.jpg"
 import {
   Container,
   HeaderTitle,
   DocumentList,
   DocumentItem,
   DocumentLink,
-  DocumentDescription
+  DocumentDescription,
+  DrawingList,
+  DrawingItem,
+  DrawingImage,
+  DrawingTitle,
+  DrawingDownload
 } from './style';
 
 const documentos = [
@@ -61,6 +75,63 @@ const documentos = [
   }
 ];
 
+const desenhos = [
+  {
+    id: 1,
+    title: 'Desenho Casa',
+    imageUrl: casades, // Substitua pelo caminho da sua imagem
+    downloadLink: casades // Substitua pelo caminho do seu download
+  },
+  {
+    id: 2,
+    title: 'Desenho Alfabeto',
+    imageUrl: alfabeto,
+    downloadLink: alfabeto
+  },
+  {
+    id: 3,
+    title: 'Desenho Dinossauro',
+    imageUrl: dino,
+    downloadLink: dino
+  },
+  {
+    id: 4,
+    title: 'Desenho Divertidamente I',
+    imageUrl: divertidaIdes,
+    downloadLink: divertidaIdes
+  },
+  {
+    id: 5,
+    title: 'Desenho Divertidamente II',
+    imageUrl: divertida,
+    downloadLink: divertida
+  },
+  {
+    id: 6,
+    title: 'Desenho Cachorro',
+    imageUrl: dog,
+    downloadLink: dog
+  },
+  {
+    id: 7,
+    title: 'Desenho Maças',
+    imageUrl: maca,
+    downloadLink: maca
+  },
+  {
+    id: 8,
+    title: 'Desenho Princesa',
+    imageUrl: princesa,
+    downloadLink: princesa
+  },
+  {
+    id: 9,
+    title: 'Desenho Tartaruga',
+    imageUrl: tartaruga,
+    downloadLink: tartaruga
+  }
+];
+
 const DocumentosAutismo = () => {
   return (
     <>
@@ -77,6 +148,18 @@ const DocumentosAutismo = () => {
             </DocumentItem>
           ))}
         </DocumentList>
+        <HeaderTitle>Desenhos sobre Autismo</HeaderTitle>
+        <DrawingList>
+          {desenhos.map(drawing => (
+            <DrawingItem key={drawing.id}>
+              <DrawingImage src={drawing.imageUrl} alt={drawing.title} />
+              <DrawingTitle>{drawing.title}</DrawingTitle>
+              <DrawingDownload href={drawing.downloadLink} download>
+                Baixar
+              </DrawingDownload>
+            </DrawingItem>
+          ))}
+        </DrawingList>
       </Container>
       <Footer />
     </>
