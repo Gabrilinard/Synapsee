@@ -2,50 +2,50 @@ const eventsData = [
     {
         title: 'O brasileiro de 8 anos que dá palestras em Londres sobre autismo e TDAH',
         description: 'Conheça a história inspiradora de um jovem brasileiro que compartilha seu conhecimento sobre autismo e TDAH em palestras internacionais.',
-        imageUrl: 'src/assets/meninoPalestra.jpg',
+        imageUrl: 'https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/ecca/live/bef7a920-d0af-11ee-b842-d5eed5856129.jpg.webp',
         link: 'https://www.bbc.com/portuguese/articles/c6peezjelm5o?xtor=AL-73-%5Bpartner%5D-%5Bflipboard%5D-%5Bheadline%5D-%5Bbrazil%5D-%5Bbizdev%5D-%5Bisapi%5D&utm_source=flipboard&utm_content=OscarKonno%2Fmagazine%2FAutismo'
     },
     {
         title: 'Existe uma cura para o TDAH?',
         description: 'Descubra mais sobre as investigações e iniciativas relacionadas à cura ou gestão do TDAH.',
-        imageUrl: 'src/assets/tdah.jpg',
+        imageUrl: 'https://www.verywellmind.com/thmb/McooAxFzEEjSwx1O2nIrr0Qkg80=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1188651577-8a49b06538024f22a29bc57af404ef64.jpg',
         link: 'https://www.verywellmind.com/is-there-a-cure-for-adhd-5525858?utm_source=flipboard&utm_content=OscarKonno%2Fmagazine%2FAutismo'
     },
     {
         title: 'Encontrada ‘pista’ que pode tratar fundamentalmente o transtorno do espectro do autismo',
         description: 'Leia sobre os avanços na pesquisa que podem potencialmente revolucionar o tratamento do transtorno do espectro do autismo.',
-        imageUrl: 'src/assets/espectro.jpg',
+        imageUrl: 'https://neurosciencenews.com/files/2022/12/asd-clue-neurosinces-publci.jpg.webp',
         link: 'https://neurosciencenews.com/asd-molecular-network-22082/?utm_source=flipboard&utm_content=OscarKonno%2Fmagazine%2FAutismo'
     },
     {
         title: 'Autismo: o que é camuflagem social, que dificulta diagnóstico em meninas?',
         description: 'Entenda o conceito de camuflagem social no contexto do autismo, especialmente como isso pode afetar o diagnóstico em meninas.',
-        imageUrl: 'src/assets/meninaAut.jpg',
+        imageUrl: 'https://ichef.bbci.co.uk/images/ic/800x450/p0cgnjr4.jpg',
         link: 'https://www.bbc.com/portuguese/brasil-60949652?utm_source=flipboard&utm_content=OscarKonno%2Fmagazine%2FAutismo'
     },
     {
         title: 'Como implementar estratégias de terapia sensorial para o autismo?',
         description: 'Explore estratégias práticas para implementar terapia sensorial e seu impacto positivo no tratamento do autismo.',
-        imageUrl: 'src/assets/terapia.jpg',
+        imageUrl: 'https://www.autismoemdia.com.br/wp-content/uploads/2023/11/Texto-do-seu-paragrafo-1.png',
         link: 'https://www.autismoemdia.com.br/blog/como-implementar-estrategias-de-terapia-sensorial-para-o-autismo/'
     },
     {
         title: 'Pessoas autistas superam os neurotípicos em uma versão cartoon de uma tarefa de reconhecimento de emoções',
         description: 'Saiba mais sobre um estudo que revela como pessoas autistas se destacam em uma tarefa de reconhecimento de emoções, mesmo em uma versão cartoon.',
-        imageUrl: 'src/assets/educar.jpg',
+        imageUrl: 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_750,h_375/https://www.psypost.org/wp-content/uploads/2022/11/cartoon-Reading-the-Mind-in-the-Eyes-750x375.jpg',
         link: 'https://www.psypost.org/autistic-people-outperform-neurotypicals-in-a-cartoon-version-of-an-emotion-recognition-task/'
     },
     {
         title: 'Crianças com autismo "vêem" essa ilusão de ótica de uma maneira única, descobriu experimento',
         description: 'Saiba mais sobre um estudo que revela como pessoas autistas se destacam em uma tarefa de reconhecimento de emoções, mesmo em uma versão cartoon.',
-        imageUrl: 'src/assets/crianca.jpg',
-        link: 'https://www.psypost.org/autistic-people-outperform-neurotypicals-in-a-cartoon-version-of-an-emotion-recognition-task/'
+        imageUrl: 'https://www.sciencealert.com/images/2023/03/VaseIllusion.jpg',
+        link: 'https://www.sciencealert.com/children-with-autism-see-this-optical-illusion-in-a-unique-way-experiment-finds?utm_source=flipboard&utm_content=OscarKonno%2Fmagazine%2FAutismo'
     },
     {
         title: 'O que são “mascaramento” e “camuflagem” no contexto do autismo e do TDAH?',
         description: 'Saiba mais sobre um estudo que revela como pessoas autistas se destacam em uma tarefa de reconhecimento de emoções, mesmo em uma versão cartoon.',
-        imageUrl: 'src/assets/camu.jpg',
-        link: 'https://www.sciencealert.com/children-with-autism-see-this-optical-illusion-in-a-unique-way-experiment-finds?utm_source=flipboard&utm_content=OscarKonno%2Fmagazine%2FAutismo'
+        imageUrl: 'https://images.theconversation.com/files/494327/original/file-20221109-12-zqnn54.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&h=503&fit=crop&dpr=1',
+        link: 'https://theconversation.com/what-are-masking-and-camouflaging-in-the-context-of-autism-and-adhd-193446?utm_source=flipboard&utm_content=OscarKonno%2Fmagazine%2FAutismo'
     },
     {
         title: 'Em um ano, 200 mil alunos com autismo foram matriculados em escolas comuns; falta de apoio a professores ainda é obstáculo',

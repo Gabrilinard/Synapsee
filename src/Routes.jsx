@@ -17,11 +17,16 @@ import Inscricao from "./pages/Inscricao"
 import EventosInscritos from "./pages/EventosInscritos"
 import Documentos from "./pages/Documentos"
 
-const Private = ({Item}) =>{
-    const {signed} = useAuth();
+const Private = ({Item}) => {
+    const { signed } = useAuth();
 
-    return signed > 0 ? <Item /> : <Login />
-}
+    if (!signed) {
+        return <Login />;
+    }
+
+    return <Item />;
+};
+
 
 
 export default function AppRoutes() {
