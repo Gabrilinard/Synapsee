@@ -148,7 +148,7 @@ const DocumentosAutismo = () => {
             </DocumentItem>
           ))}
         </DocumentList>
-        <HeaderTitle>Desenhos sobre Autismo</HeaderTitle>
+        <HeaderTitle>Desenhos</HeaderTitle>
         <DrawingList>
           {desenhos.map(drawing => (
             <DrawingItem key={drawing.id}>
