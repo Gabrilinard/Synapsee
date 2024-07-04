@@ -8,7 +8,7 @@ const FAQPage = () => {
     <PageWrapper>
       <Header fullWidth={true} />
       <Container>
-        <Title>Perguntas Frequentes sobre Autismo na Educação</Title>
+        <Title>Perguntas Frequentes sobre Autismo</Title>
         <Question>
           <h3>O que é autismo?</h3>
           <p>O autismo é um transtorno neurológico que afeta o desenvolvimento do cérebro, influenciando como uma pessoa percebe e interage com o mundo ao seu redor. É caracterizado por diferenças na comunicação, interação social, comportamentos repetitivos e sensibilidade sensorial. Por exemplo, algumas pessoas autistas podem preferir rotinas estritas e serem sensíveis a certos sons ou texturas, enquanto outras podem ter dificuldades em interpretar expressões faciais ou iniciar conversas.</p>
