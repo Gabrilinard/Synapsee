@@ -27,7 +27,7 @@ import {
 const documentos = [
   {
     id: 1,
-    title: 'Messi Não é Autista',
+    title: 'Messi não é autista',
     description: 'Uma análise sobre a vida e os desafios de Messi, abordando aspectos do autismo e superação.',
     link: 'https://acrobat.adobe.com/id/urn:aaid:sc:US:7155c884-c5e3-4d10-9160-9fe76195c22a'
   },
